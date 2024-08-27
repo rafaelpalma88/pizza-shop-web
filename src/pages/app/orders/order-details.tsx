@@ -9,9 +9,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 export function OrderDetails() {
+  // O modal não tem scroll. Arrumar isto posteriormente
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -45,7 +54,57 @@ export function OrderDetails() {
                   Diego Schell Fernandes
                 </TableCell>
               </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">
+                  Telefone
+                </TableCell>
+                <TableCell className="flex justify-end">
+                  (47) 99999-9999
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">E-mail</TableCell>
+                <TableCell className="flex justify-end">
+                  diego@rocketseat.com.br
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="text-muted-foreground">
+                  Realizado há
+                </TableCell>
+                <TableCell className="flex justify-end">há 3 minutos</TableCell>
+              </TableRow>
             </TableBody>
+          </Table>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Produto</TableHead>
+                <TableHead className="text-right">Quantidade</TableHead>
+                <TableHead>Preço</TableHead>
+                <TableHead>Subtotal</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>Pizza Pepperoni Familia</TableCell>
+                <TableCell className="text-right">2</TableCell>
+                <TableCell className="text-right">R$ 69,90</TableCell>
+                <TableCell className="text-right">R$ 139,80</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Pizza Mussarela</TableCell>
+                <TableCell className="text-right">2</TableCell>
+                <TableCell className="text-right">R$ 59,90</TableCell>
+                <TableCell className="text-right">R$ 119,80</TableCell>
+              </TableRow>
+            </TableBody>
+            <TableFooter>
+              <TableCell colSpan={3}>Total do pedido</TableCell>
+              <TableCell className="text-right font-medium">
+                R$ 259,60
+              </TableCell>
+            </TableFooter>
           </Table>
         </div>
       </DialogContent>
